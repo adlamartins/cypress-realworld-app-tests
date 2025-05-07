@@ -1,0 +1,16 @@
+{
+  "signInSucess": {
+
+    "username": "testecypress",
+    "password": "teste"
+
+  },
+
+  "signInFail": {
+
+    "username": "test",
+    "password": "test"
+
+  }
+   
+}
