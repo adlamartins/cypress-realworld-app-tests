@@ -9,6 +9,7 @@ class SignUpPage {
             lastNameRequired: "#lastName-helper-text",
             username: "[data-test='signup-username']",
             password: "[data-test='signup-password']",
+            checkPassword: "#password-helper-text",
             confirmPassword: "[name='confirmPassword']",
             signUpButton: "[data-test='signup-submit']",
             signUpTitle: "[data-test='signup-title']"
@@ -45,8 +46,18 @@ class SignUpPage {
         cy.get(this.selectorsList().password).type(password)
         cy.get(this.selectorsList().confirmPassword).type(confirmPassword)
         cy.get(this.selectorsList().signUpButton).should('be.disabled')
-
        
+    }
+
+    checkPassword(firstName, lastName, username, password){
+
+        cy.get(this.selectorsList().firstName).type(firstName)
+        cy.get(this.selectorsList().lastName).type(lastName)
+        cy.get(this.selectorsList().username).type(username)
+        cy.get(this.selectorsList().password).type(password)
+        cy.get(this.selectorsList().checkPassword).contains('Password must contain at least 4 characters')
+        cy.get(this.selectorsList().signUpButton).should('be.disabled')
+
     }
 
 }

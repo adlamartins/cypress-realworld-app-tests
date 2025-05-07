@@ -10,7 +10,7 @@ describe('Registro de Usuário - Sucesso', () => {
     signInPage.accessSignInPage()
     signInPage.goToSignUp()
 
-    signUpPage.checkSignUnPage()
+    signUpPage.checkSignUpPage()
     signUpPage.signUpSubmit("Maria", "Martins", "testemaria", "#teste", "#teste")
     
     signInPage.checkSignInPage()
@@ -20,7 +20,7 @@ describe('Registro de Usuário - Sucesso', () => {
 })
 
 describe('Registro de Usuário - Falha', () => {
-  it.only('Deve exibir mensagens de erro ao tentar registrar um novo usuário sem preencher todas as informações obrigatórias', () => {
+  it('Deve exibir mensagens de erro ao tentar registrar um novo usuário sem preencher todas as informações obrigatórias', () => {
 
     signInPage.accessSignInPage()
     signInPage.goToSignUp()
@@ -28,6 +28,18 @@ describe('Registro de Usuário - Falha', () => {
     signUpPage.checkSignUpPage()
 
     signUpPage.fillAndCheckRequired("Maria", "testemaria1", "#teste", "#teste")     
+
+  })
+
+
+  it('Deve exibir mensagem de erro ao se a senha conter menos que 4 caracteres', () =>{
+
+    signInPage.accessSignInPage()
+    signInPage.goToSignUp()
+
+    signUpPage.checkSignUpPage()
+
+    signUpPage.checkPassword("Maria", "Madalena", "testemaria2", "123")
 
   })
 
