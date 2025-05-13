@@ -1,8 +1,8 @@
 {
   "signInSucess": {
 
-    "username": "testecypress",
-    "password": "teste"
+    "username": "Reyes.Osinski",
+    "password": "s3cret"
 
   },
 
@@ -11,6 +11,12 @@
     "username": "test",
     "password": "test"
 
+  },
+
+  "userWithNoTransactions": {
+
+    "username": "testemaria",
+    "password": "#teste"
   }
    
 }

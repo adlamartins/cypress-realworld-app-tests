@@ -1,14 +1,16 @@
 import SignInPage from "../pages/signInPage"
+import MainPage from "../pages/mainPage"
 import user from "../fixtures/user.json"
 
 const signInPage = new SignInPage ()
+const mainPage = new MainPage ()
 
 describe('Login - Sucesso', () => {
   it('Deve fazer login com um usuário válido', () => {
 
     signInPage.accessSignInPage()
     signInPage.signInSubmit(user.signInSucess.username, user.signInSucess.password)
-    signInPage.checkLoginSuccess()
+    mainPage.checkMainPage()
 
   })
 

@@ -10,8 +10,7 @@ class SignInPage {
             signUpButton: "[data-test='signup']",
             accessInvalid: "[data-test='signin-error']",
             signInForm: ".SignInForm-paper",
-            mainContainer: "[data-test='main']"
-                       
+                                   
         }
 
         return selectors
@@ -46,13 +45,7 @@ class SignInPage {
         cy.location('pathname').should('equal','/signin')
         cy.get(this.selectorsList().signInForm).should('be.visible')
     }
-
-    checkLoginSuccess(){
-
-        cy.location('pathname').should('equal','/')
-        cy.get(this.selectorsList().mainContainer).should('be.visible')
-        
-    }
+    
 
 }
 
